@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_contents",
+  "info": {
+    "displayName": "content-article",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
