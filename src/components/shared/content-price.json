@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_shared_content_prices",
+  "info": {
+    "displayName": "Content-price",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string",
+      "required": true
+    },
+    "time": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "string"
+    },
+    "cabinet": {
+      "type": "boolean",
+      "default": false
+    },
+    "online": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

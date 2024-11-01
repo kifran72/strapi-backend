@@ -1,5 +1,13 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
+export interface SharedTitle extends Struct.ComponentSchema {
+  collectionName: 'components_shared_titles';
+  info: {
+    displayName: 'title';
+  };
+  attributes: {};
+}
+
 export interface SharedSlider extends Struct.ComponentSchema {
   collectionName: 'components_shared_sliders';
   info: {
@@ -74,15 +82,34 @@ export interface SharedContent extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedContentPrice extends Struct.ComponentSchema {
+  collectionName: 'components_shared_content_prices';
+  info: {
+    displayName: 'Content-price';
+    description: '';
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
+    price: Schema.Attribute.String & Schema.Attribute.Required;
+    time: Schema.Attribute.String & Schema.Attribute.Required;
+    date: Schema.Attribute.String;
+    cabinet: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    online: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.title': SharedTitle;
       'shared.slider': SharedSlider;
       'shared.seo': SharedSeo;
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
       'shared.content': SharedContent;
+      'shared.content-price': SharedContentPrice;
     }
   }
 }
