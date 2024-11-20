@@ -82,6 +82,18 @@ export interface SharedContent extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedContentTermsOfUse extends Struct.ComponentSchema {
+  collectionName: 'components_shared_content_terms_of_uses';
+  info: {
+    displayName: 'Content-TermsOfUse';
+    description: '';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+    list: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+  };
+}
+
 export interface SharedContentPrice extends Struct.ComponentSchema {
   collectionName: 'components_shared_content_prices';
   info: {
@@ -109,6 +121,7 @@ declare module '@strapi/strapi' {
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
       'shared.content': SharedContent;
+      'shared.content-terms-of-use': SharedContentTermsOfUse;
       'shared.content-price': SharedContentPrice;
     }
   }

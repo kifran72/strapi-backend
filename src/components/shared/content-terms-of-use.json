@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_content_terms_of_uses",
+  "info": {
+    "displayName": "Content-TermsOfUse",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    },
+    "list": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
