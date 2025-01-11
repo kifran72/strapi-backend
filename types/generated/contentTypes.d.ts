@@ -499,8 +499,15 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   attributes: {
     imgPreview: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
       Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 150;
+      }>;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 150;
+      }>;
     text: Schema.Attribute.Text & Schema.Attribute.Required;
     img: Schema.Attribute.String & Schema.Attribute.Required;
     content: Schema.Attribute.Component<'shared.content', true>;
